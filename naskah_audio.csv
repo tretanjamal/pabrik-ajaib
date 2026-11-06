@@ -1,0 +1,148 @@
+﻿id,teks,catatan
+say_guide1,Seret kartu ×2 ke slot mesin!,tetap; dibacakan speechSynthesis id-ID
+say_guide1tap,"Atau ketuk kartunya, lalu ketuk mesin.",tetap; dibacakan speechSynthesis id-ID
+say_guide2,Bagus! Sekarang tarik tuasnya!,tetap; dibacakan speechSynthesis id-ID
+say_rule,Pilih aturan mesin agar jadi {c} {p}!,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+say_output,"{a} peti, isi {b} {p}. Berapa semuanya?","templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+say_input,Berapa peti agar jadi {c} {p}?,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+say_pull,Tarik tuasnya!,tetap; dibacakan speechSynthesis id-ID
+say_running,Mesin sedang jalan...,tetap; dibacakan speechSynthesis id-ID
+say_idle,"Pilih satu kartu, lalu masukkan ke mesin.",tetap; dibacakan speechSynthesis id-ID
+good_0,Hebat! Pesanan beres! {a} × {b} = {c},"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+good_1,Tepat sekali! {a} × {b} = {c},"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+good_2,Mesin bekerja sempurna! {a} × {b} = {c},"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+good_3,"Keren, Insinyur! {a} × {b} = {c}","templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+wrong_rule,Kartumu ×{v} membuat {t} {p}. Pesanan {c}.,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+wrong_output,Tebakanmu {v}. Mesin membuat {c} {p}.,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+wrong_input,{v} peti membuat {t} {p}. Pesanan {c}.,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+wrong_add,"{x} + {y} = {s}, tapi mesin mengali!","templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+wrong_near,Coba hitung loncat {b} pelan-pelan.,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+wrong_nearHigh,Hampir! Sedikit kebanyakan.,tetap; dibacakan speechSynthesis id-ID
+wrong_nearLow,Hampir! Masih kurang sedikit.,tetap; dibacakan speechSynthesis id-ID
+wrong_high,Terlalu banyak! Coba kartu lebih kecil.,tetap; dibacakan speechSynthesis id-ID
+wrong_low,Masih kurang! Coba kartu lebih besar.,tetap; dibacakan speechSynthesis id-ID
+wrong_swap,Mana jumlah peti? Mana isi tiap peti?,tetap; dibacakan speechSynthesis id-ID
+wrong_tier2,Lihat petinya. Hitung {p} di tiap peti.,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+wrong_tier3,Lihat caraku membaginya!,tetap; dibacakan speechSynthesis id-ID
+wrong_tier3out,"Hitung loncat {b}, lihat angkanya!","templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+wrong_tier3in,Masukkan {b} ke tiap peti sampai habis.,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+wrong_showAnswer,Jadi kartunya {ans}. Ayo coba!,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+wrong_again,"Coba lagi, kamu pasti bisa!",tetap; dibacakan speechSynthesis id-ID
+wrong_extra,Satu soal mirip lagi untuk latihan!,tetap; dibacakan speechSynthesis id-ID
+help_rule,Ada {a} peti. Isi berapa agar jadi {c}?,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+help_output,Hitung loncat {b} sebanyak {a} kali.,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+help_input,Isi {b} tiap peti. Berapa peti untuk {c}?,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+pick_first,"Pilih kartu dulu, lalu ketuk mesin.",tetap; dibacakan speechSynthesis id-ID
+drop_here,Letakkan kartu di tempat yang menyala.,tetap; dibacakan speechSynthesis id-ID
+first_2,Mesin ini mencari kebalikannya: × jadi :.,tetap; dibacakan speechSynthesis id-ID
+first_3,"Mesin ini punya satu aturan. Tebak, ya!",tetap; dibacakan speechSynthesis id-ID
+first_4,Ada dua mesin berurutan. Jam hanya bonus.,tetap; dibacakan speechSynthesis id-ID
+first_5,Pelanggan datang. Baca dulu ceritanya!,tetap; dibacakan speechSynthesis id-ID
+l2_say_div,{c} : {b} = ? Ada berapa kelompok isi {b}?,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_say_missf,Mesin ×{b} membuat {c}. Apa yang masuk?,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_say_divisor,{c} titik jadi {a} kelompok. Isi tiap kelompok?,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_good,"{c} : {b} = {a}, jadi {a} × {b} = {c}.","templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_wrong_div,Tebakanmu {v}. Mesin membuat {a} kelompok.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_wrong_missf,{v} × {b} = {t}. Pesanan {c}.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_wrong_divisor,{a} kelompok isi {v} = {t}. Harus {c}.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_wrong_mul,Tebakanmu {v}. Mesin membuat {c} titik.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_tips_add,"× artinya kelompok sama, bukan tambah.",tetap; dibacakan speechSynthesis id-ID
+l2_tips_same,Pakai kebalikannya! Kebalikan × adalah :.,tetap; dibacakan speechSynthesis id-ID
+l2_tips_near,Hampir! Hitung loncat {b} sampai {c}.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_tips_sub,: bukan mengurangi sekali saja.,tetap; dibacakan speechSynthesis id-ID
+l2_tips_nearDiv,Bagi {c} satu-satu ke {a} kelompok.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_tips_swap,"Mana banyak kelompok, mana isinya?",tetap; dibacakan speechSynthesis id-ID
+l2_help_div,"Kelompokkan {c} titik, tiap kelompok {b}.","templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_help_missf,Berapa kali {b} agar jadi {c}?,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_help_divisor,Bagi {c} titik rata ke {a} kelompok.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_help_mul,Hitung loncat {b} sebanyak {a} kali.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_back,Mesin mundur! ×{b} dibalik jadi :{b}.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_tier2_div,Lihat titiknya. Berapa kelompok isi {b}?,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_tier2_missf,Lihat titiknya. Berapa kelompok isi {b}?,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_tier2_divisor,Lihat titiknya. Isi tiap kelompok berapa?,tetap; dibacakan speechSynthesis id-ID
+l2_tier2_mul,Lihat titiknya. Hitung loncat {b}.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_tier3_div,Lihat! {c} titik dikelompokkan isi {b}.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_tier3_missf,Lihat! {c} titik dikelompokkan isi {b}.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_tier3_divisor,Lihat! {c} titik dibagi rata satu-satu.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_tier3_mul,"Lihat! {a} kelompok, tiap kelompok {b}.","templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l3_say,Lihat 3 pasangan. Pilih aturan mesinnya!,tetap; dibacakan speechSynthesis id-ID
+l3_good,Aturan {r} cocok untuk semua pasangan!,"templat L3: {v}/{r}/{ans} aturan, {x} masukan, {y} keluaran, {got} hasil mesin, {want} keluaran benar; dibacakan speechSynthesis id-ID"
+l3_wrong,"Dengan {v}, {x} jadi {got}, bukan {want}.","templat L3: {v}/{r}/{ans} aturan, {x} masukan, {y} keluaran, {got} hasil mesin, {want} keluaran benar; dibacakan speechSynthesis id-ID"
+l3_wrongFrac,"Dengan {v}, {x} tidak habis dibagi.","templat L3: {v}/{r}/{ans} aturan, {x} masukan, {y} keluaran, {got} hasil mesin, {want} keluaran benar; dibacakan speechSynthesis id-ID"
+l3_tips_inv,Cek arahnya: dari MASUK ke KELUAR.,tetap; dibacakan speechSynthesis id-ID
+l3_tips_add,Aturan {v} cocok di 1 pasangan saja.,"templat L3: {v}/{r}/{ans} aturan, {x} masukan, {y} keluaran, {got} hasil mesin, {want} keluaran benar; dibacakan speechSynthesis id-ID"
+l3_tips_near,Belum cocok. {x} jadi {y} pakai apa?,"templat L3: {v}/{r}/{ans} aturan, {x} masukan, {y} keluaran, {got} hasil mesin, {want} keluaran benar; dibacakan speechSynthesis id-ID"
+l3_help,Lihat {x} jadi {y}. Lebih besar atau lebih kecil?,"templat L3: {v}/{r}/{ans} aturan, {x} masukan, {y} keluaran, {got} hasil mesin, {want} keluaran benar; dibacakan speechSynthesis id-ID"
+l3_tier2,Lihat titiknya: {x} jadi {y}. Kali atau bagi?,"templat L3: {v}/{r}/{ans} aturan, {x} masukan, {y} keluaran, {got} hasil mesin, {want} keluaran benar; dibacakan speechSynthesis id-ID"
+l3_tier3,Lihat aturan {ans} di tiap pasangan.,"templat L3: {v}/{r}/{ans} aturan, {x} masukan, {y} keluaran, {got} hasil mesin, {want} keluaran benar; dibacakan speechSynthesis id-ID"
+l4_say_second,Pilih aturan mesin 2 agar jadi {e}!,"templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_say_first,Pilih aturan mesin 1 agar jadi {e}!,"templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_say_start,Bilangan berapa masuk agar jadi {e}?,"templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_say_both,Pasang 2 aturan agar {s} jadi {e}!,"templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_next,Bagus! Sekarang kartu untuk mesin 2.,tetap; dibacakan speechSynthesis id-ID
+l4_good,"{s} {r1} = {m}, lalu {m} {r2} = {e}. Pas!","templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_wrong,"{s} jadi {m}, lalu jadi {t}. Target {e}.","templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_jam,Mesin {k} macet: {x} {r} tidak bulat.,"templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_tips_inv,Cek tandanya: perlu × atau :?,tetap; dibacakan speechSynthesis id-ID
+l4_tips_near,Hampir! Cek lagi hasil tiap mesin.,tetap; dibacakan speechSynthesis id-ID
+l4_tips_swap,Aturan itu milik mesin yang lain.,tetap; dibacakan speechSynthesis id-ID
+l4_tips_one,"Mesin 1 juga harus dibalik, ya!",tetap; dibacakan speechSynthesis id-ID
+l4_tips_same,Mundur? Pakai kebalikan: × jadi :.,tetap; dibacakan speechSynthesis id-ID
+l4_tips_order,Coba tukar kartunya agar hasil antaranya bulat.,tetap; dibacakan speechSynthesis id-ID
+l4_tips_fracin,Coba bilangan lain yang habis dibagi.,tetap; dibacakan speechSynthesis id-ID
+l4_tips_frac,Hasil tiap mesin harus bulat. Coba aturan lain.,tetap; dibacakan speechSynthesis id-ID
+l4_help_second,Mesin 1 membuat {m}. {m} jadi {e} pakai apa?,"templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_help_first,Mundur dari {e}: sebelum {r2} berapa?,"templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_help_start,"Mundur dari {e}, pakai kebalikan tiap mesin.","templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_help_both,Cari dulu hasil antara yang bulat.,tetap; dibacakan speechSynthesis id-ID
+l4_tier2_second,Hasil antara {m}. Dari {m} ke {e} pakai apa?,"templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_tier2_first,"Mundur: sebelum {r2}, angkanya harus {m}.","templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_tier2_start,"Mundur: {e} jadi {m}, lalu jadi ...?","templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_tier2_both,Hasil antaranya harus {m}.,"templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l4_tier3,"Lihat: {s} {r1} = {m}, lalu {m} {r2} = {e}.","templat L4: {s} masuk, {r1} {r2} aturan, {m} hasil antara, {e} target, {t} hasil mesin, {k} nomor mesin, {x} {r} langkah macet; dibacakan speechSynthesis id-ID"
+l5_story_group,Aku pesan {c} {p}. Satu {w} muat {b} {p}. Perlu berapa {w}?,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_story_share,"Ada {c} {p}, mau kubagi rata ke {b} {g}. Tiap {g} dapat berapa {p}?","templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_story_mul,Aku pesan {a} {w}. Tiap {w} isi {b} {p}. Berapa {p} semuanya?,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_story_two,"Aku beli {s} {w}, tiap {w} isi {n1} {p}. Kubagi rata ke {n2} {g}. Tiap {g} dapat berapa?","templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_say_op,Pilih aturan mesin untuk pesanan ini!,tetap; dibacakan speechSynthesis id-ID
+l5_say_num,Pilih jawabannya. Mesin akan mengecek!,tetap; dibacakan speechSynthesis id-ID
+l5_say_two,Pasang 2 aturan sesuai urutan cerita!,tetap; dibacakan speechSynthesis id-ID
+l5_next,Bagus! Sekarang aturan langkah kedua.,tetap; dibacakan speechSynthesis id-ID
+l5_thanks,Pas! {ans} {u}. Terima kasih!,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_good_div,{c} : {b} = {a}. Pesanan beres!,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_good_mul,{a} × {b} = {c}. Pesanan beres!,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_good_two,"{s} × {n1} = {m}, lalu {m} : {n2} = {e}.","templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_wrong_op,{s} {r} = {t}. Bukan itu pesanannya.,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_wrong_opJam,{s} {r}: tidak habis dibagi.,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_wrong_numDiv,"{v} × {b} = {t}, bukan {c}.","templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_wrong_numMul,"{v} : {b} = {t}, bukan {a}.","templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_wrong_numJam,{v} : {b}: tidak habis dibagi.,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_wrong_two,"{s} jadi {m}, lalu jadi {t}.","templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_tips_sameDiv,"Dengan ×, jumlahnya membesar. Di cerita?",tetap; dibacakan speechSynthesis id-ID
+l5_tips_sameMul,"Dengan :, jumlahnya mengecil. Di cerita?",tetap; dibacakan speechSynthesis id-ID
+l5_tips_same2,Cek tiap langkah: perlu × atau :?,tetap; dibacakan speechSynthesis id-ID
+l5_tips_add,Menambah sekali belum cukup. Baca lagi.,tetap; dibacakan speechSynthesis id-ID
+l5_tips_sub,Mengurangi sekali belum cukup. Baca lagi.,tetap; dibacakan speechSynthesis id-ID
+l5_tips_near,Hampir! Cek lagi angka di cerita.,tetap; dibacakan speechSynthesis id-ID
+l5_tips_nearNum,Hampir! Hitung lagi pelan-pelan.,tetap; dibacakan speechSynthesis id-ID
+l5_tips_part,Ada bagian yang belum dihitung. Cek lagi!,tetap; dibacakan speechSynthesis id-ID
+l5_tips_order,Urutan penting! Mana langkah pertama?,tetap; dibacakan speechSynthesis id-ID
+l5_tips_frac,Hasilnya tidak bulat. Coba aturan lain.,tetap; dibacakan speechSynthesis id-ID
+l5_help_op,Baca lagi ceritanya. Kali atau bagi?,tetap; dibacakan speechSynthesis id-ID
+l5_help_numDiv,Jawabanmu × {b} harus jadi {c}.,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_help_numMul,Pecah {a} jadi puluhan dan satuan.,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_help_two,Langkah 1 dulu: berapa semuanya?,tetap; dibacakan speechSynthesis id-ID
+l5_tier2_group,Tiap {w} {b}. Pakai apa?,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_tier2_share,Dibagi rata ke {b} {g}. Pakai apa?,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_tier2_mul,{a} {w} sama banyak. Pakai apa?,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_tier2_numDiv,{b} × 10 = {b10}. Lanjutkan sampai {c}.,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_tier2_numMul,{a} = {t} + {u}. Kalikan satu-satu.,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_tier2_numMul0,"Hitung {k} × {b}, lalu kali 10.","templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_tier2_two,"Hitung semuanya dulu, lalu bagi rata.",tetap; dibacakan speechSynthesis id-ID
+l5_tier3_opDiv,{c} dibagi {b}: pakai :{b}.,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_tier3_opMul,{a} kelompok isi {b}: pakai ×{b}.,"templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l5_tier3_num,Lihat caraku memecah bilangannya!,tetap; dibacakan speechSynthesis id-ID
+l5_tier3_two,"Lihat: {s} × {n1} = {m}, lalu : {n2}.","templat L5 (cerita dibacakan pelanggan): {a} × {b} = {c}, {p} benda, {w} wadah, {g} kelompok, {s} {n1} {n2} {m} {e} dua langkah, {v} kartu, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+lt_say_mul,{a} kelompok isi {b}. Berapa titik?,"templat Latihan: {a} kelompok, {b} tabel, {c} hasil; dibacakan speechSynthesis id-ID"
+lt_say_div,{c} : {b} = ? Ada berapa kelompok?,"templat Latihan: {a} kelompok, {b} tabel, {c} hasil; dibacakan speechSynthesis id-ID"
+lt_say_missf,? × {b} = {c}. Berapa kelompok?,"templat Latihan: {a} kelompok, {b} tabel, {c} hasil; dibacakan speechSynthesis id-ID"
