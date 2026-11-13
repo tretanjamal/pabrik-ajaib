@@ -50,6 +50,15 @@
       root.appendChild(Input.button(UI.icon('play', 34) + STR.levels.practice, 'brass lv-practice', function () { Scenes.go('practice'); }, { id: 'practice' }));
       bar = UI.iconBar(root, 'settings');
       setTimeout(function () { if (Scenes.name === 'levels' && first) first.focus({ preventScroll: true }); }, 60);
+      // murid baru: MULAI selalu ke sini, jadi tangan penunjuk mengetuk Mesin 1 setelah pelat muncul
+      if (!Save.data.onboarded && next === 1) {
+        var hand = UI.hand(root), pel = first;
+        Tween.wait(D.reduce ? 100 : 800).then(function () {
+          if (Scenes.name !== 'levels' || !pel.isConnected) return;
+          var r = pel.getBoundingClientRect(), o = root.getBoundingClientRect(), k = o.width / 1280;
+          hand.at((r.left - o.left + r.width * 0.5) / k, (r.top - o.top + r.height * 0.3) / k);   // di layar mesin agar nama pelat tetap terbaca
+        });
+      }
       Aud.music(true, 'calm');
     },
     exit: function () { if (bar && bar._cleanup) bar._cleanup(); },

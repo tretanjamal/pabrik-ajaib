@@ -7,6 +7,7 @@ say_output,"{a} peti, isi {b} {p}. Berapa semuanya?","templat L1: {a} peti, {b} 
 say_input,Berapa peti agar jadi {c} {p}?,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
 say_pull,Tarik tuasnya!,tetap; dibacakan speechSynthesis id-ID
 say_running,Mesin sedang jalan...,tetap; dibacakan speechSynthesis id-ID
+say_newNums,Sekarang coba bilangan lain!,tetap; dibacakan speechSynthesis id-ID
 say_idle,"Pilih satu kartu, lalu masukkan ke mesin.",tetap; dibacakan speechSynthesis id-ID
 good_0,Hebat! Pesanan beres! {a} × {b} = {c},"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
 good_1,Tepat sekali! {a} × {b} = {c},"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
@@ -23,7 +24,7 @@ wrong_high,Terlalu banyak! Coba kartu lebih kecil.,tetap; dibacakan speechSynthe
 wrong_low,Masih kurang! Coba kartu lebih besar.,tetap; dibacakan speechSynthesis id-ID
 wrong_swap,Mana jumlah peti? Mana isi tiap peti?,tetap; dibacakan speechSynthesis id-ID
 wrong_tier2,Lihat petinya. Hitung {p} di tiap peti.,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
-wrong_tier3,Lihat caraku membaginya!,tetap; dibacakan speechSynthesis id-ID
+wrong_tier3,Lihat! Semua {p} dibagi rata ke tiap peti.,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
 wrong_tier3out,"Hitung loncat {b}, lihat angkanya!","templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
 wrong_tier3in,Masukkan {b} ke tiap peti sampai habis.,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
 wrong_showAnswer,Jadi kartunya {ans}. Ayo coba!,"templat L1: {a} peti, {b} isi tiap peti, {c} jumlah, {p} nama benda, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
@@ -40,7 +41,7 @@ first_4,Ada dua mesin berurutan. Jam hanya bonus.,tetap; dibacakan speechSynthes
 first_5,Pelanggan datang. Baca dulu ceritanya!,tetap; dibacakan speechSynthesis id-ID
 l2_say_div,{c} : {b} = ? Ada berapa kelompok isi {b}?,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
 l2_say_missf,Mesin ×{b} membuat {c}. Apa yang masuk?,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
-l2_say_divisor,{c} titik jadi {a} kelompok. Isi tiap kelompok?,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
+l2_say_divisor,"{c} titik, isi berapa agar jadi {a} kelompok?","templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
 l2_good,"{c} : {b} = {a}, jadi {a} × {b} = {c}.","templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
 l2_wrong_div,Tebakanmu {v}. Mesin membuat {a} kelompok.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"
 l2_wrong_missf,{v} × {b} = {t}. Pesanan {c}.,"templat L2: {c} titik, {b} isi tiap kelompok, {a} banyak kelompok, {v} kartu pilihan, {t} hasil mesin; dibacakan speechSynthesis id-ID"

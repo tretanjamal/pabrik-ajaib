@@ -18,7 +18,9 @@
     play: '<path d="M16 10l22 14-22 14z" fill="' + CR + '"' + ST.replace('fill="none" ', '') + '/>',
     info: '<circle cx="24" cy="24" r="17" fill="' + CR + '"' + ST.replace('fill="none" ', '') + '/><circle cx="24" cy="15" r="2.8" fill="#2E2350"/><path d="M24 22v12"' + ST + '/>',
     book: '<path d="M24 13q-7-5-17-4v27q10-1 17 4q7-5 17-4V9q-10-1-17 4z" fill="' + CR + '"' + ST.replace('fill="none" ', '') + '/><path d="M24 13v27"' + ST + '/>',
-    person: '<circle cx="24" cy="15" r="9" fill="' + CR + '"' + ST.replace('fill="none" ', '') + '/><path d="M8 41q0-15 16-15t16 15z" fill="' + CR + '"' + ST.replace('fill="none" ', '') + '/>'
+    person: '<circle cx="24" cy="15" r="9" fill="' + CR + '"' + ST.replace('fill="none" ', '') + '/><path d="M8 41q0-15 16-15t16 15z" fill="' + CR + '"' + ST.replace('fill="none" ', '') + '/>',
+    prev: '<path d="M30 9L13 24l17 15z" fill="' + CR + '"' + ST.replace('fill="none" ', '') + '/>',
+    next: '<path d="M18 9l17 15-17 15z" fill="' + CR + '"' + ST.replace('fill="none" ', '') + '/>'
   };
   function icon(name, size) { return '<svg class="ico" viewBox="0 0 48 48" width="' + (size || 40) + '" height="' + (size || 40) + '" aria-hidden="true">' + ICON[name] + '</svg>'; }
 
@@ -58,11 +60,11 @@
       bar.appendChild(lb);
       function refresh() {
         var m = Save.data.settings.mute;
-        snd.innerHTML = '<span class="lbl">' + icon(m ? 'soundOff' : 'soundOn') + '</span>';
+        snd.innerHTML = '<span class="lbl">' + icon(m ? 'soundOff' : 'soundOn') + '</span>'; Input.hit(snd);
         snd.setAttribute('aria-label', m ? STR.icons.soundOff : STR.icons.soundOn);
         if (fs) {
           var f = FS.isFull();
-          fs.innerHTML = '<span class="lbl">' + icon(f ? 'fullExit' : 'full') + '</span>';
+          fs.innerHTML = '<span class="lbl">' + icon(f ? 'fullExit' : 'full') + '</span>'; Input.hit(fs);
           fs.setAttribute('aria-label', f ? STR.icons.fullExit : STR.icons.full);
         }
         lb.setAttribute('aria-label', last === 'pause' ? STR.icons.pause : STR.icons.settings);
@@ -110,7 +112,7 @@
         var on = get();
         b.classList.toggle('on', on);
         b.setAttribute('aria-pressed', on ? 'true' : 'false');
-        b.innerHTML = '<span class="knob"></span><span class="swtxt">' + (on ? STR.settings.on : STR.settings.off) + '</span>';
+        b.innerHTML = '<span class="knob"></span><span class="swtxt">' + (on ? STR.settings.on : STR.settings.off) + '</span>'; Input.hit(b);
       }
       paint(); row.appendChild(b);
       return row;
@@ -146,7 +148,7 @@
 
     /* balon dialog yang menempel pada pembicara. setText memecah kata agar bisa disorot saat dibacakan. */
     bubble: function (parent, side, rid) {
-      var el = U.h('div', 'bubble ' + (side || 'up'));
+      var el = U.h('div', 'bubble empty ' + (side || 'up'));   // balon tanpa teks tidak tampil (mis. L5 saat pelanggan bercerita)
       var txt = U.h('div', 'btxt'); el.appendChild(txt);
       txt.setAttribute('role', 'status'); txt.setAttribute('aria-live', 'polite');   // pembaca layar ikut membacakan
       var rep = Input.button(icon('speaker', 34), 'ibtn small mint', function () { if (api.text) api.say(api.text); }, { id: rid || 'replay', aria: STR.icons.replay });
@@ -156,6 +158,7 @@
         el: el, text: '',
         setText: function (s) {
           api.text = s;
+          el.classList.toggle('empty', !s);
           txt.innerHTML = s.split(/\s+/).map(function (w) { return '<span class="w">' + w + '</span>'; }).join(' ');
           el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop');
         },

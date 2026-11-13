@@ -21,8 +21,8 @@
       root.appendChild(sign);
       var rib = U.h('div', 'ribbon', STR.subtitle); root.appendChild(rib);
       var start = Input.button(UI.icon('play', 54) + STR.start, 'coral start pulse', function () {
-        // pemain baru langsung ke Mesin 1 (hook 10 detik); selanjutnya ke Pilih Mesin
-        start.disabled = true; Aud.sfx('boot'); Scenes.go(Save.data.onboarded ? 'levels' : 'play', { level: 1 });
+        // selalu ke Pilih Mesin; murid baru dipandu tangan penunjuk ke Mesin 1 (levels.js)
+        start.disabled = true; Aud.sfx('boot'); Scenes.go('levels');
       }, { id: 'start' });
       root.appendChild(start);
       var about = U.h('div', 'title-about');

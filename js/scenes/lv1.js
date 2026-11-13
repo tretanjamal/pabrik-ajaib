@@ -209,7 +209,7 @@
     await Promise.all(arr.map(function (cr) { return Tween.run(250, function (e) { cr.alpha = e; }); }));
     var step = Math.max(45, Math.min(140, 2600 / q.c)), i;
     if (q.type === 'rule') {
-      P.bubble.say(STR.wrong.tier3);
+      P.bubble.say(fmt(STR.wrong.tier3, vars(q)));
       for (var k = 0; k < q.c; k++) {
         var cr = arr[k % q.a], idx = Math.floor(k / q.a);
         (function (cr, idx) { Tween.run(160, function (e) { cr.pops[idx] = e; }, Ease.linear); })(cr, idx);

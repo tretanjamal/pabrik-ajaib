@@ -86,7 +86,7 @@
       tp.innerHTML = '<div class="phead"><span>' + R.teacherTitle + '</span><i class="lamp on"></i><i class="lamp"></i></div>';
       var tabs = U.h('div', 'ttabs'), body = U.h('div', 'pbody');
       tabs.setAttribute('role', 'tablist');
-      var pages = { session: sessionHTML(R, recs, lv, types), algebra: algebraHTML(R, recs, lv), all: allHTML(R) };
+      var pages = { session: sessionHTML(R, recs, lv, types), tips: tipsHTML(R, recs, lv), algebra: algebraHTML(R, recs, lv), all: allHTML(R) };
       Object.keys(pages).forEach(function (k, i) {
         var b = Input.button(R.tabs[k], 'tab' + (i ? '' : ' on'), function () { pick(k); }, { id: 'tab-' + k });
         b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', i ? 'false' : 'true');
@@ -141,7 +141,7 @@
     exit: function () { Voice.stop(); }
   });
 
-  /* tab "Sesi ini": status per jenis soal, fakta, pola kesalahan, bonus waktu */
+  /* tab "Sesi ini": status per jenis soal dan fakta (pola kesalahan, bantuan, waktu di tab Saran agar selalu muat) */
   function sessionHTML(R, recs, lv, types) {
     var rows = types.filter(function (ty) { return (lv !== 4 && lv !== 5) || recs.some(function (r) { return r.type === ty; }); }).map(function (ty) {
       return '<tr><td>' + R.tSkills[ty] + '</td>' + stCell(tally(recs.filter(function (r) { return r.type === ty; }))) + '</tr>';
@@ -151,12 +151,15 @@
       (r.facts || []).filter(Boolean).forEach(function (f) { seen[f] = seen[f] || { w: 0 }; seen[f].w += r.wrongs; });
     });
     Object.keys(seen).forEach(function (f) { (seen[f].w === 0 ? okF : lowF).push(f.replace('x', ' × ')); });
+    return '<table><tr><th>' + R.tColSkill + '</th><th>' + R.tColStatus + '</th></tr>' + rows + '</table>' +
+      (okF.length || lowF.length ? '<p>' + fmt(R.factsOk, { list: list(okF) || R.none }) + '</p><p>' + fmt(R.factsLow, { list: list(lowF) || R.none }) + '</p>' : '');
+  }
+  /* tab "Saran": pola kesalahan terbanyak + saran tindakan, bantuan yang dipakai, bonus waktu */
+  function tipsHTML(R, recs, lv) {
     var errs = {}; recs.forEach(function (r) { r.errs.forEach(function (e) { if (e !== 'ok') errs[e] = (errs[e] || 0) + 1; }); });
     var tops = Object.keys(errs).filter(function (e) { return R.tips[e]; }).sort(function (a, b) { return errs[b] - errs[a]; }).slice(0, 2);
     var time = P.timed ? '<p>' + fmt(R.timeBonus, { s: Math.floor(P.time / 60) + ':' + ('0' + P.time % 60).slice(-2) + ' / ' + Math.floor(SOAL.L4.bonusTime / 60) + ':00' }) + '</p>' : (lv === 4 && P.santai ? '<p>' + R.santaiNote + '</p>' : '');
-    return '<table><tr><th>' + R.tColSkill + '</th><th>' + R.tColStatus + '</th></tr>' + rows + '</table>' +
-      (okF.length || lowF.length ? '<p>' + fmt(R.factsOk, { list: list(okF) || R.none }) + '</p><p>' + fmt(R.factsLow, { list: list(lowF) || R.none }) + '</p>' : '') +
-      '<p><b>' + R.errTitle + ':</b> ' + (tops.length ? tops.map(function (e) { return R.tips[e]; }).join(' ') : R.tips.none) + '</p>' +
+    return '<p><b>' + R.errTitle + ':</b> ' + (tops.length ? tops.map(function (e) { return R.tips[e]; }).join(' ') : R.tips.none) + '</p>' +
       (P.hints ? '<p>' + fmt(R.hintsUsed, { n: P.hints }) + '</p>' : '') + time;
   }
   /* tab "Aljabar": kompetensi brief (bilangan belum diketahui, hubungan x dan :) + aturan + cerita; sesi ini dan semua sesi */

@@ -388,13 +388,15 @@
 
     /* soal serupa untuk diulang di akhir level (fakta/aturan sama, bentuk berbeda) */
     similar: function (rnd, q) {
-      var L = CFG.L1, types = ['rule', 'output', 'input'], t = types[(types.indexOf(q.type) + 1 + ri(rnd, 0, 1)) % 3];
-      var swap = rnd() < 0.5 && q.b * q.a <= 40;
+      // jenis sama agar keterampilan yang salah dilatih ulang; faktor ditukar + benda lain agar jawaban tidak bisa disalin.
+      // Bila faktor tidak bisa ditukar (a = b), jenis berganti.
+      var L = CFG.L1, types = ['rule', 'output', 'input'], swap = q.a !== q.b;
+      var t = swap ? q.type : types[(types.indexOf(q.type) + 1 + ri(rnd, 0, 1)) % 3];
       return make({ type: t, a: swap ? q.b : q.a, b: swap ? q.a : q.b, product: L.products[(L.products.indexOf(q.product) + 2) % L.products.length], extra: true }, rnd, L.cardRange);
     },
     similar2: function (rnd, q) {
-      var types = ['div', 'missf', 'divisor'], t = types[(types.indexOf(q.type) + 1 + ri(rnd, 0, 1)) % 3];
-      var swap = rnd() < 0.5;
+      var types = ['div', 'missf', 'divisor'], swap = q.a !== q.b;   // sama dengan similar(): jenis sama, faktor ditukar
+      var t = swap ? q.type : types[(types.indexOf(q.type) + 1 + ri(rnd, 0, 1)) % 3];
       if (t === 'divisor' && q.a === q.b) t = 'div';
       var o = make2({ type: t, a: swap ? q.b : q.a, b: swap ? q.a : q.b }, rnd); o.extra = true;
       return o;

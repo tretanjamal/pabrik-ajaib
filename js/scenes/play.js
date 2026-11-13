@@ -309,8 +309,8 @@
     var q = S.q, my = S;
     S.phase = 'choose'; S.idleT = 0; S.idleShown = false;
     gigo.mood = 'happy';
+    if (els.cards[0]) keepFocus(els.cards[0].el);   // juga di soal pandu: pengguna keyboard langsung punya fokus
     if (LV.intro && LV.intro(q)) return;   // soal pandu L1 mengatur balon dan tangan sendiri
-    if (els.cards[0]) keepFocus(els.cards[0].el);
     if (S.hintLv >= 3) pointAnswer();
     var first = S.firstVisit && S.idx === 0 && !q.extra && S.wrongs === 0;
     var pre = q.extra ? STR.wrong.extra : (first && STR.firstTip[S.level]) || null;
@@ -385,12 +385,12 @@
     S.coinsEarned += earned; Save.data.coins += earned;
     els.coins.classList.remove('bump'); void els.coins.offsetWidth; els.coins.classList.add('bump');
     Aud.sfx('coin');
-    Save.record(facts, S.level + ':' + q.type, first);
-    if (q.guided) Save.data.onboarded = true;
+    if (q.guided) Save.data.onboarded = true;   // soal pandu tidak dicatat sebagai penguasaan (sama dengan tab Sesi ini)
+    else Save.record(facts, S.level + ':' + q.type, first);
     Save.save();
     S.records.push({ type: LV.skillKey(q), key: S.level + ':' + q.type, guided: !!q.guided, fact: q.fact, facts: facts, wrongs: S.wrongs, errs: S.errs.slice(), hints: S.hintLv, extra: !!q.extra, first: first });
     if (first) { S.okRow++; S.badRow = 0; if (S.okRow >= 3) { S.tier = Math.min(cfg.tiers.length - 1, S.tier + 1); S.okRow = 0; } }
-    if (!first && !q.extra && !S.similarQueued && S.extrasAdded < cfg.maxExtra) { S.extras.push(LV.similar(q)); S.extrasAdded++; }
+    if (!first && !q.guided && !q.extra && !S.similarQueued && S.extrasAdded < cfg.maxExtra) { S.extras.push(LV.similar(q)); S.extrasAdded++; }
     if (!q.extra) S.idx++;
     setLamps();
     await bubble.say(LV.goodMsg(q, S.rnd)); if (!alive(my)) return;
@@ -407,14 +407,23 @@
     Save.recordWrong(factsOf(q), S.level + ':' + q.type); Save.save();
     S.okRow = 0; S.badRow++;
     if (S.badRow >= 2) { S.tier = Math.max(0, S.tier - 1); S.badRow = 0; }
-    Aud.sfx('bad'); LV.cough(q, res); gigo.mood = 'think';
+    Aud.sfx('bad'); LV.cough(q, res); gigo.mood = 'think'; boardNotEqual();
     await bubble.say(LV.wrongMsg(q, placed, res)); if (!alive(my)) return;
     await Tween.wait(900); if (!alive(my)) return;   // beri waktu membaca hasil tebakan
     await showHint(Math.min(3, Math.max(S.hintLv + 1, S.wrongs)), err, my, res); if (!alive(my)) return;
-    if (S.hintLv < 3 && LV.reveals && LV.reveals(q)) { await Tween.wait(500); if (alive(my)) swapQuestion(my); return; }
+    if (S.hintLv < 3 && LV.reveals && LV.reveals(q)) { await bubble.say(STR.say.newNums); if (alive(my)) swapQuestion(my); return; }   // beri tahu murid sebelum bilangan berganti
     resetForRetry();
   }
 
+  /* tebakan salah: papan tidak boleh tetap menulis persamaan salah (mis. 4 × 3 = 16). '=' terakhir menjadi '≠';
+     papan rantai (L4/L5) tanpa '=' memakai panah terakhir sebelum target. LV.reset / setBoard berikutnya memulihkannya. */
+  function boardNotEqual() {
+    var last = null;
+    els.eq.querySelectorAll('.op').forEach(function (o) { if (o.textContent === '=') last = o; });
+    if (last) { last.textContent = '≠'; last.classList.add('ne'); return; }
+    var ar = els.eq.querySelectorAll('.ar');
+    if (ar.length) ar[ar.length - 1].replaceWith(U.h('span', 'op ne', '≠'));
+  }
   function resetForRetry() {
     var q = S.q, cards = Object.keys(S.placedCards).map(function (k) { return S.placedCards[k]; });
     LV.reset(q);

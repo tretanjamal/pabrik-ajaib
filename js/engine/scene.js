@@ -9,10 +9,12 @@
     var vw = root.innerWidth, vh = root.innerHeight;
     var s = Math.min(vw / W, vh / H);
     Stage.scale = s;
+    document.body.classList.toggle('compact', s < 0.75);   // tombol 64 px logis < 48 px nyata: perluas area sentuh
     var x = (vw - W * s) / 2, y = (vh - H * s) / 2;
     Stage.el.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + s + ')';
     Stage.portrait = vh > vw;   // ajakan memutar menutupi layar: permainan dan timer ikut berhenti
     document.getElementById('rotate').style.display = vh > vw ? 'flex' : 'none';
+    Stage.el.inert = Stage.portrait;   // keyboard tidak boleh bekerja di balik ajakan memutar
     Stage.fits.forEach(function (fn) { fn(s); });
   }
   /* koordinat layar -> koordinat kanvas logis */
@@ -65,6 +67,7 @@
         Tween.clear();
         Loop.fns.length = 0;
         Scenes.root.innerHTML = '';
+        UI.closeOverlays(); Tween.paused = false;   // panel yang dibuka saat transisi (ketukan sangat cepat) juga ditutup
         Scenes.name = name;
         Scenes.cur = Scenes.reg[name];
         Scenes.cur.enter(Scenes.root, params || {});

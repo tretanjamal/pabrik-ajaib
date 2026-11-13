@@ -7,7 +7,7 @@
   function cite(c) { return '<p class="ab-cite">' + c[0] + ' <i>' + c[1] + '</i> ' + c[2] + '</p>'; }
 
   function goalHTML() {
-    return '<p class="ab-lead">' + A.info.intro + '</p><h3>' + A.info.goalHead + '</h3>' + bullets(A.info.goals) + '<p class="ab-note">' + A.info.meta + '</p>';
+    return '<p class="ab-lead">' + A.info.intro + '</p><h3>' + A.info.goalHead + '</h3><p class="ab-goal">' + A.info.goal + '</p><p class="ab-note">' + A.info.meta + '</p>';
   }
   function howHTML() {
     return '<ol class="ab-steps">' + A.info.steps.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ol><p class="ab-note">' + A.info.howNote + '</p>';
@@ -61,11 +61,29 @@
     ref: function () {
       return open(A.ref.title, [{ id: 'source', label: A.ref.tabs.source, html: sourceHTML }, { id: 'ai', label: A.ref.tabs.ai, html: aiHTML }]);
     },
+    /* satu pengembang per halaman; tombol panah di kiri-kanan Tutup berpindah (berputar) antarpengembang */
     dev: function () {
-      var d = A.dev;
-      return open(d.title, null, '<div class="ab-dev"><img class="ab-photo" src="assets/img/pengembang.webp" alt="' + d.photoAlt + '" draggable="false">' +
-        '<div class="ab-devinfo"><div class="ab-name">' + d.name + '</div><div class="ab-school">' + d.school + '</div><div class="ab-contact">' + d.email + '</div><div class="ab-contact">' + d.year + '</div>' +
-        '<h3>' + d.listHead + '</h3>' + bullets(d.list) + '</div></div>');
+      var d = A.dev, n = d.people.length, i = 0;
+      var o = open(d.title, null, ''), body = o.body.querySelector('.ab-body'), close = o.body.querySelector('.ab-close');
+      var dots = U.h('div', 'ab-dots');
+      dots.setAttribute('aria-hidden', 'true');
+      o.body.insertBefore(dots, close);
+      var foot = U.h('div', 'ab-foot');
+      o.body.insertBefore(foot, close);
+      var prev = UI.iconButton('prev', 'brass', function () { show(i - 1); }, { id: 'dev-prev', aria: d.prev });
+      var next = UI.iconButton('next', 'brass', function () { show(i + 1); }, { id: 'dev-next', aria: d.next });
+      foot.appendChild(prev); foot.appendChild(close); foot.appendChild(next);
+      function show(k) {
+        i = (k + n) % n;
+        var p = d.people[i];
+        body.innerHTML = '<div class="ab-dev" aria-label="' + U.fmt(d.page, { n: i + 1, max: n }) + '"><img class="ab-photo" src="' + p.photo + '" alt="' + U.fmt(d.photoAlt, { name: p.name }) + '" draggable="false">' +
+          '<div class="ab-devinfo"><div class="ab-name">' + p.name + '</div><div class="ab-school">' + p.school + '</div>' + (p.email ? '<div class="ab-contact">' + p.email + '</div>' : '') + (p.ig ? '<div class="ab-contact ab-ig"><img src="assets/img/ikon-instagram.webp" alt="' + p.igAlt + '">' + p.ig + '</div>' : '') + '<div class="ab-contact">' + d.year + '</div>' +
+          (p.list ? '<h3>' + p.listHead + '</h3>' + bullets(p.list) : '') + '</div></div>';
+        body.dataset.dev = i;
+        dots.innerHTML = d.people.map(function (_, k) { return '<i' + (k === i ? ' class="on"' : '') + '></i>'; }).join('');
+      }
+      show(0);
+      return o;
     }
   };
 })(window);

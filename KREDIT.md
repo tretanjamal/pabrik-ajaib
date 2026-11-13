@@ -33,8 +33,12 @@ Dibuat oleh kreator dengan ChatGPT (pembuat gambar OpenAI), tanggal masuk 2026-1
 | cust_a_*.webp, cust_b_*.webp | cust_a.png, cust_b.png | #22, #23 (dipakai Level 5) |
 
 `pengembang.webp` (panel Pengembang) adalah foto kreator, disediakan kreator (`assets/masuk/jamal.png`), dipangkas dengan `tools/proses-foto.py`. Bukan buatan KA.
+`pengembang2.webp` (panel Pengembang, halaman kedua) adalah foto pengembang kedua, Sri Anita, disediakan kreator (`assets/masuk/Sri Anita.jpe`), dipangkas dengan `tools/proses-foto.py`. Bukan buatan KA.
 
-`key_art.png` (#21) disimpan untuk thumbnail (Fase 4), tidak ikut zip.
+`ikon-instagram.webp` (panel Pengembang, di samping nama akun Instagram) adalah logo Instagram yang disediakan kreator (`assets/masuk/Instagram_icon.png`), diperkecil dengan `tools/proses-foto.py`. Logo merek milik Meta Platforms, Inc., dipakai hanya untuk menandai akun media sosial pengembang (bukan tautan). Bukan buatan KA.
+
+`key_art.png` (#21) disimpan sebagai thumbnail alternatif (`dist/thumbnail-keyart-lama.png`), tidak ikut zip; robotnya berbeda desain dengan Gigo.
+Thumbnail utama `dist/thumbnail.png` (840x472) disusun dari aset gim sendiri: adegan judul digambar mesin gim, Gigo `gigo_cheer.webp`, papan judul dan kartu soal dengan font Lilita One/Fredoka (`tools/thumbnail.html`, `tools/thumbnail.js`). Tidak ikut zip.
 Ban berjalan, uap, kilau, partikel, bayangan, tombol, panel, kartu, ikon, dan semua angka dibuat dengan kode.
 
 ## Suara

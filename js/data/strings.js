@@ -25,13 +25,8 @@ window.STR = {
       btn: 'Informasi', title: 'Informasi',
       tabs: { goal: 'Tujuan', how: 'Cara Main', machines: 'Mesin', teacher: 'Untuk Guru' },
       intro: 'Pabrik Ajaib butuh insinyur baru! Bantu Gigo mengatur mesin dan memenuhi pesanan.',
-      goalHead: 'Setelah bermain, kamu bisa:',
-      goals: [
-        'Memahami perkalian dan pembagian sebagai operasi yang saling berkebalikan.',
-        'Menemukan bilangan yang belum diketahui, misalnya ? × 6 = 42.',
-        'Menebak aturan mesin dari pasangan bilangan masuk dan keluar.',
-        'Menyelesaikan soal cerita satu langkah dan dua langkah.'
-      ],
+      goalHead: 'Tujuan Pembelajaran',
+      goal: 'Murid dapat menemukan bilangan yang belum diketahui pada perkalian dan pembagian dengan memakai hubungan keduanya yang saling berkebalikan, termasuk dalam soal cerita.',
       meta: 'Matematika. Aljabar: Perkalian dan Pembagian. Sekitar 15-20 menit.',
       steps: [
         'Lihat pesanan di papan dan dengarkan arahan Gigo.',
@@ -61,7 +56,8 @@ window.STR = {
       tabs: { source: 'Sumber Materi', ai: 'Kecerdasan Artifisial' },
       sourceIntro: 'Sumber materi gim ini:',
       sources: [
-        ['Ari Setiyani, dkk. (2025).', 'Panduan Mata Pelajaran Matematika.', 'Badan Standar, Kurikulum, dan Asesmen Pendidikan, Kementerian Pendidikan Dasar dan Menengah Republik Indonesia.']
+        ['Ari Setiyani, dkk. (2025).', 'Panduan Mata Pelajaran Matematika.', 'Badan Standar, Kurikulum, dan Asesmen Pendidikan, Kementerian Pendidikan Dasar dan Menengah Republik Indonesia.'],
+        ['Badan Standar, Kurikulum, dan Asesmen Pendidikan (2025).', 'Keputusan Kepala BSKAP Nomor 046/H/KR/2025 tentang Capaian Pembelajaran.', 'Kementerian Pendidikan Dasar dan Menengah Republik Indonesia.']
       ],
       topic: 'Topik gim ini: Aljabar, Perkalian dan Pembagian.',
       aiIntro: 'Pengembang memakai kecerdasan artifisial (KA) sebagai alat bantu.',
@@ -77,15 +73,21 @@ window.STR = {
     },
     dev: {
       btn: 'Pengembang', title: 'Pengembang',
-      photoAlt: 'Foto Jamaluddin',
-      name: 'Jamaluddin', school: 'UPTD SMPN 2 Robatal', email: 'jamaluddin551@guru.smp.belajar.id', year: 'Tahun pembuatan: 2026',
-      listHead: 'Prestasi dan Pengalaman',
-      list: [
-        'Narasumber Digitalisasi Pembelajaran Kemendikdasmen',
-        'Guru Pejuang Digital',
-        'Juara 1 Lomba Inovasi Guru SMP Kabupaten Sampang 2026',
-        'Juara 1 Guru Inspiratif SMP Kabupaten Sampang 2026',
-        'Komunitas Belajar Terbaik BLPT Kemendikdasmen 2024'
+      year: 'Tahun pembuatan: 2026', photoAlt: 'Foto {name}',
+      prev: 'Pengembang sebelumnya', next: 'Pengembang berikutnya', page: 'Pengembang {n} dari {max}',
+      people: [
+        {
+          name: 'Jamaluddin', photo: 'assets/img/pengembang.webp', school: 'UPTD SMPN 2 Robatal', email: 'jamaluddin551@guru.smp.belajar.id', ig: '@tretanjamal', igAlt: 'Instagram',
+          listHead: 'Prestasi dan Pengalaman',
+          list: [
+            'Narasumber Digitalisasi Pembelajaran Kemendikdasmen',
+            'Guru Pejuang Digital',
+            'Juara 1 Lomba Inovasi Guru SMP Kabupaten Sampang 2026',
+            'Juara 1 Guru Inspiratif SMP Kabupaten Sampang 2026',
+            'Komunitas Belajar Terbaik BLPT Kemendikdasmen 2024'
+          ]
+        },
+        { name: 'Sri Anita', photo: 'assets/img/pengembang2.webp', school: 'Guru UPTD SDN Dharma Tanjung 1' }
       ]
     }
   },
@@ -120,7 +122,7 @@ window.STR = {
   mid: 'HASIL 1',
   dots: 'titik',
   group: 'kelompok',
-  perGroup: 'tiap kelompok',
+  perGroup: 'isi',   // kartu L2 c : ? = a; harus muat 1 baris di kartu
   number: 'bilangan',
   ruleLbl: 'ATURAN',
   pairsHead: ['MASUK', 'KELUAR', 'HASIL'],
@@ -161,6 +163,7 @@ window.STR = {
     input: 'Berapa peti agar jadi {c} {p}?',
     pull: 'Tarik tuasnya!',
     running: 'Mesin sedang jalan...',
+    newNums: 'Sekarang coba bilangan lain!',
     idle: 'Pilih satu kartu, lalu masukkan ke mesin.'
   },
   /* kalimat pembuka saat pertama kali masuk sebuah mesin */
@@ -185,7 +188,7 @@ window.STR = {
     low: 'Masih kurang! Coba kartu lebih besar.',
     swap: 'Mana jumlah peti? Mana isi tiap peti?',
     tier2: 'Lihat petinya. Hitung {p} di tiap peti.',
-    tier3: 'Lihat caraku membaginya!',
+    tier3: 'Lihat! Semua {p} dibagi rata ke tiap peti.',
     tier3out: 'Hitung loncat {b}, lihat angkanya!',
     tier3in: 'Masukkan {b} ke tiap peti sampai habis.',
     showAnswer: 'Jadi kartunya {ans}. Ayo coba!',
@@ -197,7 +200,7 @@ window.STR = {
     say: {
       div: '{c} : {b} = ? Ada berapa kelompok isi {b}?',
       missf: 'Mesin ×{b} membuat {c}. Apa yang masuk?',
-      divisor: '{c} titik jadi {a} kelompok. Isi tiap kelompok?'
+      divisor: '{c} titik, isi berapa agar jadi {a} kelompok?'
     },
     good: '{c} : {b} = {a}, jadi {a} × {b} = {c}.',
     wrong: {
@@ -387,13 +390,13 @@ window.STR = {
       ltdiv: 'Fakta pembagian tabel ini (c : b = ?)',
       ltmissf: 'Faktor hilang (? × b = c)'
     },
-    tabs: { session: 'Sesi ini', algebra: 'Aljabar', all: 'Rekap' },
+    tabs: { session: 'Sesi ini', tips: 'Saran', algebra: 'Aljabar', all: 'Rekap' },
     algTitle: 'Kompetensi aljabar',
     alg: {
-      unknown: 'Bilangan yang belum diketahui',
-      inverse: 'Hubungan perkalian dan pembagian',
-      rule: 'Aturan dari pasangan angka',
-      story: 'Soal cerita dan dua langkah'
+      unknown: 'Bilangan belum diketahui',   // label tabel sempit: maks. 2 baris agar tab Aljabar muat
+      inverse: 'Hubungan × dan :',
+      rule: 'Aturan dari pasangan',
+      story: 'Cerita dan dua langkah'
     },
     algSession: 'Sesi ini', algAll: 'Semua sesi',
     allStars: 'Bintang tiap mesin', allFacts: 'Fakta 2-10 dikuasai: {k} dari {all}', allWeak: 'Fakta perlu latihan: {list}', allPractice: 'Latihan bebas selesai: {n} kali',
@@ -401,7 +404,7 @@ window.STR = {
     errTitle: 'Pola kesalahan',
     status: { ok: 'Lancar', mid: 'Cukup', low: 'Perlu latihan', few: 'Data sedikit', none: 'Belum muncul' },
     factsOk: 'Benar tanpa salah sesi ini: {list}',
-    factsLow: 'Perlu latihan: {list}',
+    factsLow: 'Salah di sesi ini: {list}',
     none: '-',
     tips: {
       add: 'Murid kadang menjumlah alih-alih mengali; tekankan "kelompok yang sama".',

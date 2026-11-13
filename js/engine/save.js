@@ -20,6 +20,7 @@
     if (!isObj(d.settings)) d.settings = f.settings;
     for (k in f.settings) if (typeof d.settings[k] !== 'boolean') d.settings[k] = f.settings[k];
     ['coins', 'practice', 'tier'].forEach(function (n) { if (typeof d[n] !== 'number' || !isFinite(d[n])) d[n] = f[n]; });
+    d.tier = Math.max(0, Math.min(9, Math.round(d.tier)));   // simpanan rusak tidak boleh membuat adaptif macet di tingkat negatif
     if (typeof d.onboarded !== 'boolean') d.onboarded = f.onboarded;
     ['facts', 'skills'].forEach(function (n) {
       if (!isObj(d[n])) d[n] = {};

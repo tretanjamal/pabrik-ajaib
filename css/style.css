@@ -30,6 +30,8 @@ body { font-family: var(--txt); color: var(--ink); }
   transition: transform 90ms ease-out, box-shadow 90ms ease-out, filter 120ms;
   display: flex; align-items: center; justify-content: center; gap: 10px; outline: none;
 }
+.btn .hit { position: absolute; inset: 0; }
+body.compact .btn .hit { inset: -16px; }   /* dari dalam border 4 px: 64 + 2 x 12 = 88 px logis = 44 px nyata pada skala 0,5 */
 .btn::before { content: ''; position: absolute; left: 10px; right: 10px; top: 6px; height: 28%; border-radius: 10px; background: #fff; opacity: .22; pointer-events: none; }
 .btn::after {   /* 4 paku keling kuningan */
   content: ''; position: absolute; inset: 7px; pointer-events: none;
@@ -84,6 +86,7 @@ body { font-family: var(--txt); color: var(--ink); }
 /* ===== Balon dialog (menempel ke pembicara) ===== */
 .bubble { position: absolute; z-index: 15; background: var(--cream); border: 4px solid var(--ink); border-radius: 22px; padding: 12px 20px 14px; width: 330px;
   font: 600 26px/1.25 var(--txt); color: var(--ink); box-shadow: 0 6px 0 rgba(46, 35, 80, .3); transform: translate(-60px, -100%); }
+.bubble.empty { display: none; }
 .bubble::after { content: ''; position: absolute; left: 40px; bottom: -24px; width: 30px; height: 26px; background: var(--cream); border: 4px solid var(--ink); border-top: none; border-left: none; transform: skewX(-30deg); clip-path: polygon(0 0, 100% 0, 100% 100%); }
 .bubble.side { transform: translate(28px, -50%); }
 .bubble.side::after { left: -22px; bottom: auto; top: 50%; margin-top: -14px; transform: rotate(90deg) skewX(30deg); }
@@ -150,8 +153,17 @@ body { font-family: var(--txt); color: var(--ink); }
 .ab-name { font: 400 48px/1 var(--ttl); color: var(--wall); }
 .ab-school { margin-top: 6px; font-weight: 700; font-size: 28px; }
 .ab-contact { font-size: 24px; }
+.ab-ig { display: flex; align-items: center; gap: 8px; }
+.ab-ig img { width: 30px; height: 30px; flex: none; }
 .ab-devinfo { min-width: 0; }
 .ab-devinfo .ab-list li { font-size: 22px; line-height: 1.2; }
+.ab-goal { padding: 12px 18px; border-left: 8px solid var(--brass); border-radius: 10px; background: var(--lavL); font-weight: 600; font-size: 26px; line-height: 1.35; }
+.ab-dots { display: flex; justify-content: center; gap: 12px; margin-top: 6px; flex: none; }
+.ab-dots i { width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--ink); background: var(--creamD); }
+.ab-dots i.on { background: var(--brass); }
+.ab-foot { display: flex; justify-content: center; align-items: center; gap: 28px; flex: none; }
+.ab-foot .btn { position: relative; }
+.ab-foot .btn.ab-close { align-self: auto; }
 
 /* ===== Layar bermain ===== */
 .hud { position: absolute; left: 16px; top: 14px; height: 70px; padding: 0 18px 0 20px; background: var(--ink); border: 4px solid var(--brass); border-radius: 20px; display: flex; align-items: center; gap: 14px; box-shadow: 0 6px 0 rgba(46, 35, 80, .35); z-index: 5; }
@@ -169,6 +181,7 @@ body { font-family: var(--txt); color: var(--ink); }
 .eqboard .n { font: 700 54px var(--txt); color: var(--cream); min-width: 40px; text-align: center; }
 .eqboard .op { font: 700 50px var(--txt); color: var(--mintL); }
 .eqboard .n.res { color: var(--brass); }
+.eqboard .op.ne { color: var(--coral); }
 .eqboard .q { width: 74px; height: 64px; border: 4px dashed var(--brass); border-radius: 12px; display: flex; align-items: center; justify-content: center; font: 700 50px var(--txt); color: var(--brass); background: rgba(255, 194, 61, .12); animation: qblink 1.2s ease-in-out infinite; }
 .eqboard .q.filled { border-style: solid; color: var(--cream); animation: none; }
 .eqboard .q.ok { border-color: var(--green); color: var(--green); background: rgba(124, 217, 87, .16); }
@@ -385,7 +398,7 @@ body { font-family: var(--txt); color: var(--ink); }
 .btn.pr-tbl { left: 340px; }
 
 /* ===== Hasil (Fase 3) ===== */
-.unlock { position: absolute; left: 40px; right: 40px; top: 108px; height: 48px; background: var(--cream); border: 4px solid var(--ink); border-radius: 26px; display: flex; align-items: center; justify-content: center; gap: 10px; font: 700 24px var(--txt); color: var(--ink); box-shadow: 0 6px 0 rgba(46, 35, 80, .3), 0 0 0 4px var(--brass); z-index: 3; }
+.unlock { position: absolute; left: 40px; right: 40px; top: 124px; height: 48px; background: var(--cream); border: 4px solid var(--ink); border-radius: 26px; display: flex; align-items: center; justify-content: center; gap: 10px; font: 700 24px var(--txt); color: var(--ink); box-shadow: 0 6px 0 rgba(46, 35, 80, .3), 0 0 0 4px var(--brass); z-index: 3; }
 .res-skills { padding: 10px 20px 12px; }
 .res-skills h3 { font-size: 24px; margin: 4px 0 2px; }
 .res-skills li { font: 600 20px/1.3 var(--txt); margin: 3px 0; padding-left: 30px; }
