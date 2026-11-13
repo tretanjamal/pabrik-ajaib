@@ -77,7 +77,7 @@ window.STR = {
       prev: 'Pengembang sebelumnya', next: 'Pengembang berikutnya', page: 'Pengembang {n} dari {max}',
       people: [
         {
-          name: 'Jamaluddin', photo: 'assets/img/pengembang.webp', school: 'UPTD SMPN 2 Robatal', email: 'jamaluddin551@guru.smp.belajar.id', ig: '@tretanjamal', igAlt: 'Instagram',
+          name: 'Jamaluddin', photo: 'assets/img/pengembang.webp', school: 'UPTD SMPN 2 Robatal', email: 'jamaluddin551@guru.smp.belajar.id', ig: 'tretanjamal', igAlt: 'Instagram',
           listHead: 'Prestasi dan Pengalaman',
           list: [
             'Narasumber Digitalisasi Pembelajaran Kemendikdasmen',
